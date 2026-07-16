@@ -1,4 +1,4 @@
-public class TestPersona {
+/* public class TestPersona {
     public static void main(String[] args) {
 
         Persona persona1 = new Persona("Vanesa", 22);
@@ -13,4 +13,4 @@ public class TestPersona {
         persona2.setEdad(25); // Modificar la edad
         System.out.println(persona2.getEdad()); // Comprobar la edad modificada
     }
-}
+} */
