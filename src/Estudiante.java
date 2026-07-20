@@ -1,6 +1,6 @@
 // HERENCIA
 
-public class Estudiante extends Persona implements Nadador {
+public class Estudiante extends Persona implements Nadador, Comparable<Estudiante> {
     private String centroEstudios;
     private double nota;
     public void setNota(double nota) {
@@ -36,5 +36,15 @@ public class Estudiante extends Persona implements Nadador {
     @Override
     public void nadar() {
         System.out.println(getNombre() + " está nadando.");
+    }
+
+    @Override
+    public int compareTo(Estudiante otroEstudiante) {
+        return this.getEdad() - otroEstudiante.getEdad();
+    }
+
+    @Override
+    public String toString() {
+        return getNombre() + " (" + getEdad() + " años)";
     }
 }

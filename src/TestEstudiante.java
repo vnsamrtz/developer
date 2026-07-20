@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Collections;
+
 public class TestEstudiante {
     public static void main(String[] args) {
         Estudiante estudiante1 = new Estudiante("Vanesa", 22, "MEDAC");
@@ -25,5 +29,20 @@ public class TestEstudiante {
         } catch (NotaInvalidaException e) {
             System.out.println("Error de nota: " + e.getMessage());
         }
+
+        ArrayList<Estudiante> estudiantes = new ArrayList<>();
+        estudiantes.add(estudiante1);
+        estudiantes.add(estudiante2);
+
+        Comparator<Estudiante> porNombre = new Comparator<Estudiante>() {
+            @Override
+            public int compare(Estudiante e1, Estudiante e2) {
+                return e1.getNombre().compareTo(e2.getNombre());
+            }
+        };
+
+        System.out.println("Antes: " + estudiantes);
+        Collections.sort(estudiantes, porNombre);
+        System.out.println("Después: " + estudiantes);
     }
 }
